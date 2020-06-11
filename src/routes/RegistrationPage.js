@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import userAPI from '../services/user-api-service';
 
-export default function Register() {
+export default function Register(props) {
   const [userName, setUserName] = useState();
   const [userPass, setUserPass] = useState();
+
+  let reRoute = () => {
+    props.history.push('/login');
+  };
 
   let handleRegistration = (e) => {
     e.preventDefault();
     if (userName.trim().length >= 5 && userPass.trim().length >= 5) {
       const data = { userName, userPass };
-      userAPI.createUser(data);
+      userAPI.createUser(data, reRoute);
     }
   };
 

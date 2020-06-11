@@ -4,11 +4,11 @@ import DropDown from './DropDown';
 export default function Form(props) {
   const [title, setTitle] = useState();
   const [content, setContent] = useState();
-  const [tag, setTag] = useState();
+  const [tags, setTags] = useState();
 
   return (
     <div>
-      <form onSubmit={(e) => props.handleSubmit(e, title, content, tag)}>
+      <form onSubmit={(e) => props.handleSubmit(e, title, content, tags)}>
         <div>
           <label>Title</label>
           <input
@@ -30,7 +30,7 @@ export default function Form(props) {
           <DropDown
             noTrend={props.noTrend}
             tags={props.tags}
-            handleSelectedTag={(e) => setTag(e.target.value)}
+            handleSelectedTag={(e) => setTags(e.target.value)}
           />
         </div>
         <input type="submit" />

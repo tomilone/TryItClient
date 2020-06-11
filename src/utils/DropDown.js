@@ -19,6 +19,9 @@ export default function DropDown(props) {
               </option>
             ))
           : null}
+        <option className="options" value="author">
+          My Post's
+        </option>
       </select>
     </div>
   );

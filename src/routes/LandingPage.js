@@ -1,5 +1,5 @@
 import React from 'react';
-import TryItLogo from '../logo/TryItLogo.png';
+import { Link } from 'react-router-dom';
 
 export default function LandingPage() {
   return (
@@ -11,6 +11,12 @@ export default function LandingPage() {
         commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
         velit esse cillum dolore eu fugiat nulla pariatur
       </p>
+      <div>
+        <Link to="/registration">Register</Link>
+      </div>
+      <div>
+        <Link to="/login">Login</Link>
+      </div>
     </div>
   );
 }

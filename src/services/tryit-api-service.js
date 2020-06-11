@@ -7,6 +7,14 @@ const TryItApiService = {
       return 0;
     });
   },
+  getUserCards(id) {
+    return fetch(`http://localhost:8000/api/cards?id=${id}`).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return 0;
+    });
+  },
   getAllTags() {
     return fetch('http://localhost:8000/api/tags').then((res) => {
       if (res.ok) {
@@ -38,6 +46,20 @@ const TryItApiService = {
     }).then((res) => {
       if (res.ok) {
         cb();
+      }
+    });
+  },
+  deleteCard(id) {
+    return fetch('http://localhost:8000/api/cards', {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ id }),
+    }).then((res) => {
+      if (res.ok) {
+        Promise.resolve();
+        window.location.reload();
       }
     });
   },

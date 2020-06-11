@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
 import CardView from '../Components/CardView/CardView';
 import ApiService from '../services/tryit-api-service';
-import UserContext from '../Context/UserContext';
 import Form from '../utils/Form';
 
-export default class LandingPage extends Component {
+export default class Dashboard extends Component {
   constructor(props) {
     super(props);
 
@@ -41,17 +39,18 @@ export default class LandingPage extends Component {
     });
   };
 
-  createCard = (e, title, content, tag) => {
+  createCard = (e, title, content, tags, author) => {
     e.preventDefault();
 
-    if (!tag) {
-      tag = '1';
+    if (!tags) {
+      tags = '1';
     }
 
     const data = {
       title,
       content,
-      tag,
+      tags,
+      author: localStorage.getItem('id'),
     };
 
     ApiService.createCard(data);
@@ -59,6 +58,11 @@ export default class LandingPage extends Component {
       view: false,
     });
     window.location.reload();
+  };
+
+  logout = () => {
+    localStorage.clear();
+    this.props.history.push('/');
   };
 
   handleUpdateTries = (e, id, tries, closeModal) => {
@@ -83,12 +87,15 @@ export default class LandingPage extends Component {
   conditionalRender = () => {
     if (!this.state.view) {
       return (
-        <CardView
-          tags={this.state.tags}
-          cards={this.state.cards}
-          add={this.add}
-          update={this.handleUpdateTries}
-        />
+        <>
+          <button onClick={() => this.logout()}>logout</button>
+          <CardView
+            tags={this.state.tags}
+            cards={this.state.cards}
+            add={this.add}
+            update={this.handleUpdateTries}
+          />
+        </>
       );
     }
     return (

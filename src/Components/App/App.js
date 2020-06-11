@@ -4,11 +4,21 @@ import { Route, Switch } from 'react-router-dom';
 import Dashboard from '../../routes/Dashboard';
 import LandingPage from '../../routes/LandingPage';
 import Registration from '../../routes/RegistrationPage';
+import Login from '../../routes/LoginPage';
 import TryItLogo from '../../logo/TryItLogo.png';
+import publicIp from 'public-ip';
 import './App.css';
 
 export default class App extends Component {
   render() {
+    window.addEventListener(
+      'storage',
+      function () {
+        window.localStorage.clear();
+        window.location.replace('/');
+      },
+      false
+    );
     return (
       <div>
         <header className="customLogo_container">
@@ -18,6 +28,7 @@ export default class App extends Component {
           <Route exact path="/" component={LandingPage} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/registration" component={Registration} />
+          <Route path="/login" component={Login} />
         </Switch>
       </div>
     );

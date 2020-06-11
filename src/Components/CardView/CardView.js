@@ -3,7 +3,6 @@ import DropDown from '../../utils/DropDown';
 import Card from '../Card/Card';
 import ExpandCard from '../ExpandCard/ExpandCard';
 import ExpandedView from '../ExpandCard/ExpandedView';
-import TryItLogo from '../../logo/TryItLogo.png';
 
 import './CardView.css';
 
@@ -13,6 +12,7 @@ export default class CardView extends Component {
     this.state = {
       currentTag: 'trending',
       trending: [],
+      user: null,
     };
   }
 
@@ -26,7 +26,27 @@ export default class CardView extends Component {
   filterTags = () => {
     const tries = Object.values(this.props.cards);
     tries.sort((a, b) => b.tries - a.tries);
-    console.log(tries);
+
+    if (this.state.currentTag === 'author') {
+      return tries.map((card) =>
+        card.author == localStorage.getItem('id') ? (
+          <div className="eachCard">
+            <ExpandCard>
+              <ExpandedView
+                id={card.id}
+                title={card.title}
+                content={card.content}
+                tries={card.tries}
+                author={card.author}
+                update={this.props.update}
+              />
+            </ExpandCard>
+            <Card title={card.title} tries={card.tries} />
+          </div>
+        ) : null
+      );
+    }
+
     return tries.map((card) =>
       card.tags == this.state.currentTag ? (
         <div className="eachCard">
@@ -36,6 +56,7 @@ export default class CardView extends Component {
               title={card.title}
               content={card.content}
               tries={card.tries}
+              author={card.author}
               update={this.props.update}
             />
           </ExpandCard>
@@ -57,6 +78,7 @@ export default class CardView extends Component {
             title={card.title}
             content={card.content}
             tries={card.tries}
+            author={card.author}
             update={this.props.update}
           />
         </ExpandCard>
@@ -73,7 +95,7 @@ export default class CardView extends Component {
   };
 
   render() {
-    console.log(this.state.currentTag);
+    console.log(this.props.cards);
     return (
       <section>
         <div className="dropDown">

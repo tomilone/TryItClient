@@ -76,9 +76,6 @@ export default class CardView extends Component {
     console.log(this.state.currentTag);
     return (
       <section>
-        <header className="customLogo_container">
-          <img className="logo" src={TryItLogo} alt="Try It!" />
-        </header>
         <div className="dropDown">
           <DropDown
             tags={this.props.tags}

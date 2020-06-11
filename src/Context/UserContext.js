@@ -1,7 +1,7 @@
 import React from 'react';
 
 const UserContext = React.createContext({
-  tags:[]
-})
+  tags: [],
+});
 
-export default UserContext
+export default UserContext;

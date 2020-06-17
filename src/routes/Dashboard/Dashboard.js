@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import CardView from '../Components/CardView/CardView';
-import ApiService from '../services/tryit-api-service';
-import Form from '../utils/Form';
+import CardView from '../../Components/CardView/CardView';
+import ApiService from '../../services/tryit-api-service';
+import AddCard from '../../Components/AddCard/AddCard';
+import './Dashboard.css';
 
 export default class Dashboard extends Component {
   constructor(props) {
@@ -88,7 +89,11 @@ export default class Dashboard extends Component {
     if (!this.state.view) {
       return (
         <>
-          <button onClick={() => this.logout()}>logout</button>
+          <div className="logoutContainer">
+            <button className="logOut" onClick={() => this.logout()}>
+              logout
+            </button>
+          </div>
           <CardView
             tags={this.state.tags}
             cards={this.state.cards}
@@ -100,10 +105,10 @@ export default class Dashboard extends Component {
     }
     return (
       <>
-        <button type="button" onClick={() => this.back()}>
+        <button className="goBack" type="button" onClick={() => this.back()}>
           back
         </button>
-        <Form
+        <AddCard
           back={this.back}
           tags={this.state.tags}
           handleSubmit={this.createCard}

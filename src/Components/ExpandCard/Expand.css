@@ -1,1 +1,40 @@
+.expandedContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 5px;
+}
+.expandedContainer .delete {
+  background-color: #ed1c24;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #000000;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
 
+.tryit-button {
+  background-color: #26bfd0;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #000000;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.expandedContainer h2,
+p,
+button {
+  margin: 10px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .expandedContainer {
+    padding: 100px 10px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .expandedContainer {
+    padding: 70px 10px;
+  }
+}

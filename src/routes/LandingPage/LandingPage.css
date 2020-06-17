@@ -20,7 +20,7 @@
 .customButton a {
   text-decoration: none;
   background-color: #ed1c24;
-  color: #d8ede2;
+  color: #000000;
   padding: 0.5em 1em;
   text-transform: uppercase;
   border-radius: 5px;
@@ -29,4 +29,27 @@
 .customButton a:hover {
   cursor: pointer;
   background-color: #870000;
+}
+
+@media only screen and (min-width: 1200px) {
+  .landingContainer {
+    display: flex;
+    margin-top: 50px;
+    width: 90vw;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    margin-top: 0;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 30px;
+  }
+
+  .mission {
+    padding-right: 20px;
+    font-size: 24px;
+    line-height: 30px;
+    word-spacing: 0;
+  }
 }

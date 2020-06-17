@@ -1,0 +1,14 @@
+.logoutContainer {
+  display: block;
+  text-align: center;
+}
+
+.logOut,
+.goBack {
+  background-color: #26bfd0;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #000000;
+  text-transform: uppercase;
+  border-radius: 5px;
+}

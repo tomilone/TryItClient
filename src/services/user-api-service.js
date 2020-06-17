@@ -1,5 +1,5 @@
 const userApiService = {
-  createUser(data, callback) {
+  createUser(data, success, fail) {
     return fetch('http://localhost:8000/api/user/register', {
       method: 'POST',
       headers: {
@@ -7,12 +7,15 @@ const userApiService = {
       },
       body: JSON.stringify(data),
     }).then((res) => {
-      if (res.ok) {
-        return callback();
+      if (!res.ok) {
+        return res.json().then((resJson) => {
+          fail(resJson);
+        });
       }
+      return success();
     });
   },
-  loginUser(data, callback) {
+  loginUser(data, success, fail) {
     return fetch('http://localhost:8000/api/user/login', {
       method: 'POST',
       headers: {
@@ -22,16 +25,17 @@ const userApiService = {
     })
       .then((res) => {
         if (res.ok) {
-          return res.json();
-        } else {
-          return Promise.reject();
+          return res.json().then((resJSON) => {
+            window.localStorage.setItem('id', resJSON);
+            success(resJSON);
+          });
         }
+        throw new Error(res.statusText);
       })
-      .then((resJSON) => {
-        localStorage.setItem('id', resJSON);
-        return callback('success');
-      })
-      .catch(callback('error'));
+
+      .catch((err) => {
+        return fail(err.message);
+      });
   },
 };
 

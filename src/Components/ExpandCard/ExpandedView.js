@@ -1,6 +1,6 @@
 import React from 'react';
-import tryItButton from '../../logo/TryItButton.png';
 import TryItAPIService from '../../services/tryit-api-service';
+import './Expand.css';
 
 export default function ExpandedView(props) {
   function checkDelete() {
@@ -15,20 +15,23 @@ export default function ExpandedView(props) {
   function deleteButton() {
     const currentUser = localStorage.getItem('id');
     return currentUser == props.author ? (
-      <button onClick={() => checkDelete()}>Delete</button>
+      <button className="delete" onClick={() => checkDelete()}>
+        Delete
+      </button>
     ) : null;
   }
 
   return (
-    <div>
+    <div className="expandedContainer">
       <h2>{props.title}</h2>
       <p>{props.content}</p>
       <button
+        className="tryit-button"
         onClick={(e) =>
           props.update(e, props.id, props.tries, props.closeModal)
         }
       >
-        <img src={tryItButton} alt="Try It Button" />
+        TryIt!
       </button>
       <p>
         {props.tries} <i className="fas fa-users"></i> Tried It!

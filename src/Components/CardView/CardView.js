@@ -106,6 +106,7 @@ export default class CardView extends Component {
           <div className="add_container">
             <button
               type="button"
+              aria-label="add Card"
               className="addPost"
               onClick={() => this.props.add()}
             >

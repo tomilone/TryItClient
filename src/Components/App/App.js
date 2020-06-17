@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-// import Form from '../../utils/Form';
-import Dashboard from '../../routes/Dashboard';
-import LandingPage from '../../routes/LandingPage';
-import Registration from '../../routes/RegistrationPage';
-import Login from '../../routes/LoginPage';
+import Dashboard from '../../routes/Dashboard/Dashboard';
+import LandingPage from '../../routes/LandingPage/LandingPage';
+import RegistrationPage from '../../routes/Registration/RegistrationPage';
+import Login from '../../routes/Login/LoginPage';
 import TryItLogo from '../../logo/TryItLogo.png';
-import publicIp from 'public-ip';
 import './App.css';
 
 export default class App extends Component {
@@ -27,7 +25,7 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/dashboard" component={Dashboard} />
-          <Route path="/registration" component={Registration} />
+          <Route path="/registration" component={RegistrationPage} />
           <Route path="/login" component={Login} />
         </Switch>
       </div>

@@ -62,7 +62,7 @@ export default class Dashboard extends Component {
 
   logout = () => {
     localStorage.clear();
-    this.props.history.push('/');
+    this.props.history.push('/login');
   };
 
   handleUpdateTries = (e, id, tries, closeModal) => {

@@ -12,12 +12,12 @@
 ## App Images
 
 <p text-align="center">
-  <img width="223" height="395.5" src="./assets/Landing.PNG">
-  <img width="223" height="395.5" src="./assets/Login.PNG">
-  <img width="223" height="395.5" src="./assets/Registration.PNG">
-  <img width="223" height="395.5" src="./assets/Dashboard.PNG">
-  <img width="223" height="395.5" src="./assets/ExpandedPost.PNG">
-  <img width="223" height="395.5" src="./assets/AddCard.PNG">
+  <img width="250" height="250" src="./assets/Landing.PNG">
+  <img width="250" height="250" src="./assets/Login.PNG">
+  <img width="250" height="250" src="./assets/Registration.PNG">
+  <img width="223" height="250" src="./assets/Dashboard.PNG">
+  <img width="250" height="250" src="./assets/ExpandedPost.PNG">
+  <img width="250" height="250" src="./assets/AddCard.PNG">
 </p>
 
 ## Summary

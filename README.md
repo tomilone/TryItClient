@@ -7,6 +7,7 @@
 ## Live App Link
 
 -Client deployed on Zeit
+
 -Server deployed on Heroku
 
 ## App Images

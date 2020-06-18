@@ -1,13 +1,8 @@
-<img src='./logo/TryItLogo.png' display='block' margin='0 auto' >
+<img src='./src/logo/TryItLogo.png' display='block' margin='0 auto' >
 
-#TryIt!
+# TryIt!
 
 > A Full Stack Forum-based Application that encourages user's to try new things!
-
-[![Build Status][travis-image]][travis-url]
-[![NPM Version][npm-image]][npm-url]
-
-<img src='./src/logo/TryItLogo.png' >
 
 ## Live App Link
 

@@ -71,7 +71,7 @@ export default class CardView extends Component {
     tries.sort((a, b) => b.tries - a.tries);
     let trends = tries.slice(0, 5);
     return trends.map((card) => (
-      <div className="eachCard">
+      <div key={card.id} className="eachCard">
         <ExpandCard>
           <ExpandedView
             id={card.id}
@@ -95,7 +95,6 @@ export default class CardView extends Component {
   };
 
   render() {
-    console.log(this.props.cards);
     return (
       <section>
         <div className="dropDown">

@@ -55,7 +55,7 @@ export default class RegistrationForm extends Component {
             this.validateEntry(e);
           }}
         >
-          <label for="user">User Name</label>
+          <label htmlFor="user">User Name</label>
           <input
             type="text"
             name="user"
@@ -63,7 +63,7 @@ export default class RegistrationForm extends Component {
             value={this.state.username}
             onChange={(e) => this.setState({ username: e.target.value })}
           />
-          <label for="pass">Password</label>
+          <label htmlFor="pass">Password</label>
           <input
             type="text"
             name="pass"

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CardView from '../../Components/CardView/CardView';
-import ApiService from '../../services/tryit-api-service';
+import TryItApiService from '../../services/tryit-api-service';
 import AddCard from '../../Components/AddCard/AddCard';
 import './Dashboard.css';
 
@@ -16,12 +16,12 @@ export default class Dashboard extends Component {
   }
 
   componentDidMount() {
-    ApiService.getAllCards().then((cards) =>
+    TryItApiService.getAllCards().then((cards) =>
       this.setState({
         cards,
       })
     );
-    ApiService.getAllTags().then((tags) =>
+    TryItApiService.getAllTags().then((tags) =>
       this.setState({
         tags,
       })
@@ -54,7 +54,7 @@ export default class Dashboard extends Component {
       author: localStorage.getItem('id'),
     };
 
-    ApiService.createCard(data);
+    TryItApiService.createCard(data);
     this.setState({
       view: false,
     });
@@ -75,7 +75,7 @@ export default class Dashboard extends Component {
     };
     const cardToUpdate = this.state.cards.find((c) => c.id === id);
     cardToUpdate.tries = tries;
-    ApiService.updateTries(data, () => {
+    TryItApiService.updateTries(data, () => {
       this.setState(
         {
           cards: this.state.cards.map((c) => (c.id === id ? cardToUpdate : c)),
@@ -119,7 +119,6 @@ export default class Dashboard extends Component {
   };
 
   render() {
-    console.log(this.state);
     return this.conditionalRender();
   }
 }

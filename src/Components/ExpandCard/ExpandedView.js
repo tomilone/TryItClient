@@ -1,14 +1,14 @@
 import React from 'react';
-import TryItAPIService from '../../services/tryit-api-service';
+import TryItApiService from '../../services/tryit-api-service';
 import './Expand.css';
 
 export default function ExpandedView(props) {
   function checkDelete() {
     const currentUser = localStorage.getItem('id');
     if (currentUser == props.author) {
-      TryItAPIService.deleteCard(props.id);
+      TryItApiService.deleteCard(props.id);
     } else {
-      alert('not yours dingbat');
+      alert('You can not delete this card');
     }
   }
 

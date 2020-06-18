@@ -20,7 +20,7 @@ export default class ExpandCard extends Component {
     return (
       <>
         <span className="card expand" onClick={this.openModal}>
-          <i class="fas fa-expand"></i>
+          <i className="fas fa-expand"></i>
         </span>
         <Popup
           contentStyle={{ width: '75%', height: '50%', background: '#d8ede2' }}

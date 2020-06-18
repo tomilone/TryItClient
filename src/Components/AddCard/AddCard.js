@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import DropDown from '../../utils/DropDown';
 import './AddCard.css';
 
 export default function Form(props) {
   const [title, setTitle] = useState();
   const [content, setContent] = useState();
-  const [tags, setTags] = useState();
+  const [tags] = useState();
 
   return (
     <div className="add">
@@ -13,14 +12,14 @@ export default function Form(props) {
         className="addForm"
         onSubmit={(e) => props.handleSubmit(e, title, content, tags)}
       >
-        <label>Title</label>
+        <label htmlFor="title">Title</label>
         <input
           type="text"
           aria-label="title"
           name="title"
           onChange={(e) => setTitle(e.target.value)}
         />
-        <label>Content</label>
+        <label htmlFor="Content">Content</label>
         <input
           type="text"
           aria-label="content"

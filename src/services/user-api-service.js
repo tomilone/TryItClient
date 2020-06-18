@@ -1,6 +1,8 @@
+import config from '../config';
+
 const userApiService = {
   createUser(data, success, fail) {
-    return fetch('http://localhost:8000/api/user/register', {
+    return fetch(`${config.API_ENDPOINT}/user/register`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -16,7 +18,7 @@ const userApiService = {
     });
   },
   loginUser(data, success, fail) {
-    return fetch('http://localhost:8000/api/user/login', {
+    return fetch(`${config.API_ENDPOINT}/user/login`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -39,4 +41,4 @@ const userApiService = {
   },
 };
 
-module.exports = userApiService;
+export default userApiService;

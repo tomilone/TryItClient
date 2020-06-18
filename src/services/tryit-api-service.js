@@ -1,6 +1,8 @@
+import config from '../config';
+
 const TryItApiService = {
   getAllCards() {
-    return fetch(`http://localhost:8000/api/cards`).then((res) => {
+    return fetch(`${config.API_ENDPOINT}/cards`).then((res) => {
       if (res.ok) {
         return res.json();
       }
@@ -8,7 +10,7 @@ const TryItApiService = {
     });
   },
   getUserCards(id) {
-    return fetch(`http://localhost:8000/api/cards?id=${id}`).then((res) => {
+    return fetch(`${config.API_ENDPOINT}/cards?id=${id}`).then((res) => {
       if (res.ok) {
         return res.json();
       }
@@ -16,7 +18,7 @@ const TryItApiService = {
     });
   },
   getAllTags() {
-    return fetch('http://localhost:8000/api/tags').then((res) => {
+    return fetch(`${config.API_ENDPOINT}/tags`).then((res) => {
       if (res.ok) {
         return res.json();
       }
@@ -24,7 +26,7 @@ const TryItApiService = {
     });
   },
   createCard(data) {
-    return fetch('http://localhost:8000/api/cards', {
+    return fetch(`${config.API_ENDPOINT}/cards`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -37,7 +39,7 @@ const TryItApiService = {
     });
   },
   updateTries(data, cb) {
-    return fetch('http://localhost:8000/api/cards', {
+    return fetch(`${config.API_ENDPOINT}/cards`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
@@ -50,7 +52,7 @@ const TryItApiService = {
     });
   },
   deleteCard(id) {
-    return fetch('http://localhost:8000/api/cards', {
+    return fetch(`${config.API_ENDPOINT}/cards`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
@@ -65,4 +67,4 @@ const TryItApiService = {
   },
 };
 
-module.exports = TryItApiService;
+export default TryItApiService;

@@ -7,7 +7,7 @@
 [![Build Status][travis-image]][travis-url]
 [![NPM Version][npm-image]][npm-url]
 
-<img src='./logo/TryItLogo.png' >
+<img src='./src/logo/TryItLogo.png' >
 
 ## Live App Link
 
@@ -17,12 +17,12 @@
 ## App Images
 
 <p text-align="center">
-  <img width="223" height="395.5" src="assets/Landing.png">
-  <img width="223" height="395.5" src="assets/Login.png">
-  <img width="223" height="395.5" src="assets/Registration.png">
-  <img width="223" height="395.5" src="assets/Dashboard.png">
-  <img width="223" height="395.5" src="assets/ExpandedPost.png">
-  <img width="223" height="395.5" src="assets/AddCard.png">
+  <img width="223" height="395.5" src="./assets/Landing.png">
+  <img width="223" height="395.5" src="./assets/Login.png">
+  <img width="223" height="395.5" src="./assets/Registration.png">
+  <img width="223" height="395.5" src="./assets/Dashboard.png">
+  <img width="223" height="395.5" src="./assets/ExpandedPost.png">
+  <img width="223" height="395.5" src="./assets/AddCard.png">
 </p>
 
 ## Summary

@@ -4,7 +4,7 @@ import './AddCard.css';
 export default function Form(props) {
   const [title, setTitle] = useState();
   const [content, setContent] = useState();
-  const [tags] = useState();
+  const [tags, setTags] = useState();
 
   return (
     <div className="add">

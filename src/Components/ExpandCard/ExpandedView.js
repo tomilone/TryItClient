@@ -23,6 +23,9 @@ export default function ExpandedView(props) {
 
   return (
     <div className="expandedContainer">
+      <span onClick={props.closeModal} className="exit">
+        <i className="fas fa-times"></i>
+      </span>
       <h2>{props.title}</h2>
       <p>{props.content}</p>
       <button

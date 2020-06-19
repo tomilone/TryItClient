@@ -65,7 +65,7 @@ export default class RegistrationForm extends Component {
           />
           <label htmlFor="pass">Password</label>
           <input
-            type="text"
+            type="password"
             name="pass"
             aria-label="password"
             value={this.state.password}

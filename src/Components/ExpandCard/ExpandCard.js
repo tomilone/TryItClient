@@ -23,7 +23,7 @@ export default class ExpandCard extends Component {
           <i className="fas fa-expand"></i>
         </span>
         <Popup
-          contentStyle={{ width: '75%', height: '50%', background: '#d8ede2' }}
+          contentStyle={{ width: '75%', height: '60%', background: '#d8ede2' }}
           open={this.state.open}
           closeOnDocumentClick
           onClose={this.closeModal}

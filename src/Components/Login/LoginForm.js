@@ -46,7 +46,7 @@ export default class LoginForm extends Component {
           <label htmlFor="password">Password</label>
           <input
             name="password"
-            type="text"
+            type="password"
             aria-label="password"
             placeholder="password"
             onChange={(e) => this.setState({ pass: e.target.value })}

@@ -28,6 +28,16 @@ button {
   margin: 10px 0;
 }
 
+.exit {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.exit i {
+  font-size: 24px;
+}
+
 @media only screen and (min-width: 768px) {
   .expandedContainer {
     padding: 100px 10px;

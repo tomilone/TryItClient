@@ -23,7 +23,7 @@ export default function ExpandedView(props) {
 
   return (
     <div className="expandedContainer">
-      <span onClick={props.closeModal} className="exit">
+      <span aria-label="exit" onClick={props.closeModal} className="exit">
         <i className="fas fa-times"></i>
       </span>
       <h2>{props.title}</h2>
